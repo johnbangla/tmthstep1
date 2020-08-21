@@ -103,7 +103,7 @@ const  handleSubmit =({ username, password })=> {
 
   return (
     <Screen style={styles.container}>
-      <Image style={styles.logo} source={require("../assets/logo-red.png")} />
+      <Image style={styles.logo} source={require("../assets/icon.png")} />
 
       <Form
      initialValues={{ username: "guest", password: "8England_" }} 
@@ -121,7 +121,7 @@ const  handleSubmit =({ username, password })=> {
           // icon="username"
           // keyboardType="username-address"
           name="username" //change
-          placeholder="username"
+          placeholder="username                                                 "
           // textContentType="usernameAddress"  //change
         />
         <FormField
@@ -129,7 +129,7 @@ const  handleSubmit =({ username, password })=> {
           autoCorrect={false}
           icon="lock"
           name="password"
-          placeholder="Password"
+          placeholder="Password                                                 "
           secureTextEntry
           textContentType="password"
         />
@@ -147,8 +147,8 @@ const styles = StyleSheet.create({
     width: 80,
     height: 80,
     alignSelf: "center",
-    marginTop: 50,
-    marginBottom: 20,
+    marginTop: 40,
+    marginBottom: 30,
   },
 });
 

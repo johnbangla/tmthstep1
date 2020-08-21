@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet } from "react-native";
 import * as Yup from "yup";
+import InputScrollView from 'react-native-input-scroll-view';
 
 import {
   Form,
@@ -17,8 +18,8 @@ import UploadScreen from "./UploadScreen";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
-   //price: Yup.number().required().min(1).max(10000).label("Price"),
-  //description: Yup.string().label("Description"),
+  // price: Yup.number().required().min(1).max(10000).label("Price"),
+  description: Yup.string().label("Description"),
   category: Yup.object().required().nullable().label("Category"),
   images: Yup.array().min(1, "Please select at least one image."),
 });
@@ -27,49 +28,49 @@ const categories = [
   {
     backgroundColor: "#fc5c65",
     icon: "floor-lamp",
-    label: "Divorce woman",
+    label: "Divorced Woman",
     value: 1,
   },
   {
     backgroundColor: "#fd9644",
     icon: "car",
-    label: "Divorce sick",
+    label: "Divorced Sick",
     value: 2,
   },
   {
     backgroundColor: "#fed330",
     icon: "camera",
-    label: "very old sick",
+    label: "Old & Sick",
     value: 3,
   },
   {
     backgroundColor: "#26de81",
     icon: "cards",
-    label: "jobless",
+    label: "Jobless",
     value: 4,
   },
   {
     backgroundColor: "#2bcbba",
     icon: "shoe-heel",
-    label: "Food request",
+    label: "Food Request",
     value: 5,
   },
   {
     backgroundColor: "#45aaf2",
     icon: "basketball",
-    label: "orphan",
+    label: "Orphan",
     value: 6,
   },
   {
     backgroundColor: "#4b7bec",
     icon: "headphones",
-    label: "reverted islam",
+    label: "Reverted to Islam",
     value: 7,
   },
   {
     backgroundColor: "#a55eea",
     icon: "book-open-variant",
-    label: "change life from begging ",
+    label: "Change Life From Begging ",
     value: 8,
   },
   {
@@ -154,6 +155,7 @@ function ListingEditScreen() {
   };
 
   return (
+    <InputScrollView>
    
     <Screen style={styles.container}>
       {/* <UploadScreen
@@ -175,15 +177,15 @@ function ListingEditScreen() {
       >
         <FormImagePicker name="images" />
 
-        <FormField maxLength={255} name="title" placeholder="Name                                                    " />
+        <FormField maxLength={255} name="title" placeholder="Title                                                    " />
 
          
         <FormField
           maxLength={255}
           multiline
           name="description"
-          numberOfLines={3}
-          placeholder="Description                                                                    "/>
+          numberOfLines={6}
+          placeholder="Story                                                                    "/>
        
 
         <Picker
@@ -197,18 +199,18 @@ function ListingEditScreen() {
        
      
 
-
-        {/* <FormField
+{/* 
+        <FormField
           keyboardType="numeric"
           maxLength={8}
           name="price"
-          placeholder="Age"
-          width={120}
+          placeholder="importance value(1-10)               "
+          width="50%"
         /> */}
          <SubmitButton title="Submit Story" />
       </Form>
     </Screen>
-    
+    </InputScrollView>
   );
 }
 

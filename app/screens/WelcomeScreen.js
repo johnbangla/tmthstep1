@@ -12,7 +12,7 @@ function WelcomeScreen({ navigation }) {
       source={require("../assets/background.jpg")}
     >
       <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require("../assets/logo-red.png")} />
+        <Image style={styles.logo} source={require("../assets/icon.png")} />
         <Text style={styles.tagline}>Donate What You Don't Need</Text>
         <Text style={styles.tagline}>True Man True Help </Text>
       </View>

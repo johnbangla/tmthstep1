@@ -2,6 +2,7 @@ import React,{ useCallback} from "react";
 import { StyleSheet, View, FlatList,Linking } from "react-native";
 
 import { ListItem, ListItemSeparator } from "../components/lists";
+import InputScrollView from 'react-native-input-scroll-view';
 import colors from "../config/colors";
 import Icon from "../components/Icon";
 import routes from "../navigation/routes";
@@ -27,29 +28,38 @@ const menuItems = [
     targetScreen: routes.MESSAGES,
   },
   {
-    title: "official Website",
+    title: "Official",
     icon: {
       name: "web",
       backgroundColor: colors.primary,
     },
-    targetScreen: routes.URL,
+    targetScreen: routes.OFFICIAL
     
   },
-  {
-    title: "Facebook",
-    icon: {
-      name: "facebook",
-      backgroundColor: colors.secondary,
-    },
-    targetScreen: routes.FB,
-  },
-  {
-    title: "Youtube",
-    icon: {
-      name: "youtube",
-      backgroundColor: colors.secondary,
-    },
-    targetScreen: routes.YTB,
+  // {
+  //   title: "Facebook",
+  //   icon: {
+  //     name: "facebook",
+  //     backgroundColor: colors.secondary,
+  //   },
+  //   targetScreen: routes.FB,
+  // },
+  // {
+  //   title: "Youtube",
+  //   icon: {
+  //     name: "youtube",
+  //     backgroundColor: colors.secondary,
+  //   },
+  //   targetScreen: routes.YTB,
+  // },
+
+   {
+    title:"Explore",
+      icon:{
+      name:"web",
+      backgroundColor:colors.primary,
+      },
+    targetScreen:routes.OTHER,
   },
 
 ];
@@ -59,21 +69,11 @@ function AccountScreen({ navigation }) {
   const { user, logOut } = useAuth();
 
   return (
-    <Screen style={styles.screen}>
-      <View style={styles.container}>
-      <ListItem
-        title="Log Out"
-        IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
-        onPress={() => logOut()}
-      />
-        {/* <ListItem
-          title={user.name}
-          subTitle={user.email}
-          image={require("../assets/mosh.jpg")}
-        /> */}
-      </View>
-     
-      <View style={styles.container}>
+    //  <InputScrollView>
+   <Screen style={styles.screen}>
+   
+       <View> 
+      {/* <View style={styles.container}> */}
         <FlatList
           data={menuItems}
           keyExtractor={(menuItem) => menuItem.title}
@@ -89,20 +89,34 @@ function AccountScreen({ navigation }) {
               }
               onPress={() => navigation.navigate(item.targetScreen)}
             />
+            
+
           )}
         />
+ 
+         <ListItem
+        title="Log Out"
+        IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
+        onPress={() => logOut()}
+      />
+       
+       
       </View>
     
     </Screen>
+  
+    //  </InputScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   screen: {
-    backgroundColor: colors.light,
+    backgroundColor: colors.white,
   },
   container: {
-    marginVertical: 20,
+    
+    marginBottom:0,
+    marginTop:0,
   },
 });
 

@@ -3,13 +3,14 @@
     "name": "TMTH",
     "slug": "TMTH",
     "platforms": ["ios", "android", "web"],
+    "sdkVersion": "38.0.0",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
     "splash": {
       "image": "./app/assets/splash.png",
       "resizeMode": "cover",
-      "backgroundColor": "#5B5EA6"
+      "backgroundColor": "#cc0418"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

@@ -2,13 +2,16 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import ListingsScreen from "../screens/ListingsScreen";
 import ListingDetailsScreen from "../screens/ListingDetailsScreen";
-
+import PaymentScreen from '../screens/PaymentScreen';
+import MessageDetailsScreen from '../screens/MessageDetailsScreen';
 const Stack = createStackNavigator();
 
 const FeedNavigator = () => (
   <Stack.Navigator mode="modal" screenOptions={{ headerShown: false }}>
     <Stack.Screen name="Listings" component={ListingsScreen} />
     <Stack.Screen name="ListingDetails" component={ListingDetailsScreen} />
+    <Stack.Screen name="PaymentDetails" component={PaymentScreen} />
+    <Stack.Screen name="MessageDetails" component={MessageDetailsScreen} />
   </Stack.Navigator>
 );
 

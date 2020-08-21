@@ -8,4 +8,9 @@ export default Object.freeze({
   URL:"Tmth",
   FB:"Fb",
   YTB:"Yt",
+  PAYMENT:"PaymentDetails",
+  OTHER:"Other",
+  MSGDTS:"MessageDetails",
+  DURL:"Durl",
+  OFFICIAL:"Official",
 });

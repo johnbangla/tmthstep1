@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
 import { FlatList, StyleSheet, View } from "react-native";
-
+import routes from "../navigation/routes";
 import Screen from "../components/Screen";
 import {
   ListItem,
@@ -27,7 +27,7 @@ import listingsApi from '../api/listings';
 //   },
 // ];
 
-function MessagesScreen(props) {
+function MessagesScreen({navigation}) {
 
   //for making messages api
   const getMessagesApi = useApi(listingsApi.gettmthmessages);
@@ -66,8 +66,9 @@ function MessagesScreen(props) {
           <ListItem
             title={item.title}
             subTitle={item.description}
-           // image={item.image}
-            onPress={() => console.log("Message selected", item)}
+       
+           onPress={() => navigation.navigate(routes.MSGDTS, item)}
+            // onPress={() => console.log("Message selected", item)}
             renderRightActions={() => (
               <ListItemDeleteAction onPress={() => handleDelete(item)} />
             )}

@@ -19,14 +19,14 @@ function About({ navigation }) {
   return (
     <ImageBackground
       style={customstyles.image}
-      source={require("../assets/chair.jpg")}
+      source={require("../assets/about.jpg")}
     >
       <View style={styles.logoContainer}>
         {/* {/* <Image style={styles.logo} source={require("../assets/logo-red.png")} /> */}
         <Text style={customstyles.headline}>True Man True Help</Text> 
-        <Text style={customstyles.headline}>A non profit Organization</Text> 
+        <Text style={customstyles.headline}>A nonprofit Organization</Text> 
         <Text style={customstyles.headline}>A framework which will not give you social status but real  peace in the name of Allah</Text> 
-        <Text style={customstyles.headline}>App Developer contact</Text> 
+        <Text style={customstyles.headline}>Developed by</Text> 
         <Text style={customstyles.headline}>johnbangla@gmail.com</Text> 
       </View>
       <View style={styles.buttonsContainer}>
@@ -99,7 +99,19 @@ const customstyles = StyleSheet.create({
   headline: {
     textAlign: 'center', // <-- the magic
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 15,
+    marginTop: 15,
+    width: 200,
+  
+     left:'50%',
+     right:'-50%',
+    color: "black",
+    justifyContent: "center",
+  },
+  contact: {
+    textAlign: 'center', // <-- the magic
+    fontWeight: 'bold',
+    fontSize: 12,
     marginTop: 0,
     width: 200,
   

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-
+import  useNotifications from '../hooks/useNotifications';
 import AccountNavigator from "./AccountNavigator";
 import About from '../screens/About';
 import FeedNavigator from "./FeedNavigator";
@@ -11,7 +11,10 @@ import routes from "./routes";
 
 const Tab = createBottomTabNavigator();
 
-const AppNavigator = () => (
+const AppNavigator = () => {
+  // useNotifications();
+
+  return (
   <Tab.Navigator>
     <Tab.Screen
       name="People"
@@ -62,5 +65,6 @@ const AppNavigator = () => (
 
   </Tab.Navigator>
 );
+  }//for notification
 
 export default AppNavigator;

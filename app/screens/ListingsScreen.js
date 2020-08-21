@@ -5,17 +5,18 @@ import ActivityIndicator from "../components/ActivityIndicator";
 import Button from "../components/Button";
 import Card from "../components/Card";
 import colors from "../config/colors";
-import listingsApi from "../api/listings";
+import listingsApi from "../api/listings";  //1
 import routes from "../navigation/routes";
 import Screen from "../components/Screen";
 import AppText from "../components/Text";
-import useApi from "../hooks/useApi";
+import useApi from "../hooks/useApi";       //2
 
 function ListingsScreen({ navigation }) {
   const baseimageurl = "http://johnreactnative.pythonanywhere.com" //for custom API
-  const getListingsApi = useApi(listingsApi.getListings);
+  
+  const getListingsApi = useApi(listingsApi.getListings);   //3
 
-  useEffect(() => {
+  useEffect(() => {                             //4
     getListingsApi.request();
   }, []);
 
@@ -35,13 +36,18 @@ function ListingsScreen({ navigation }) {
           renderItem={({ item }) => (
             <Card
               title={item.title}
-              subTitle={ item.price}
+              subTitle= {'ref#' + item.userId}
                // Please add this line
               imageUrl={baseimageurl + item.images[0].aimage}
+             
               // imageUrl={item.images[0].url}
+              
               onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
               thumbnailUrl={item.images[0].thumbnailUrl}
+
+         
             />
+       
           )}
         />
       </Screen>

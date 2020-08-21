@@ -6,7 +6,9 @@ import About from '../screens/About';
 import TmTh from '../screens/TmThScreen';
 import Fb from '../screens/FaceBook';
 import YouTubeScreen from '../screens/YouTubeScreen';
-
+import OtherScreen from '../screens/OtherScreen';
+import DynamicurlScreen from '../screens/DynamicurlScreen';
+import Officials from '../screens/Officials';
 const Stack = createStackNavigator();
 
 const AccountNavigator = () => (
@@ -17,6 +19,9 @@ const AccountNavigator = () => (
     <Stack.Screen name="Tmth" component={TmTh}/>
     <Stack.Screen name="Fb" component={Fb}/>
     <Stack.Screen name="Yt" component={YouTubeScreen}/>
+    <Stack.Screen name="Other" component={OtherScreen}/>
+    <Stack.Screen name="Durl" component={DynamicurlScreen}/>
+    <Stack.Screen name="Official" component={Officials}/>
   </Stack.Navigator>
 );
 

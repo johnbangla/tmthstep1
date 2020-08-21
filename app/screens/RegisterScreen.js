@@ -108,7 +108,7 @@ const  handleSubmit =({ username,email, password })=> {
       <ActivityIndicator visible={registerApi.loading || loginApi.loading} />
       <Screen style={styles.container}>
         <Form
-          initialValues={{ username: "", email: "@gmail.com", password: "8England_" }}
+          initialValues={{ username: "", email: "", password: "" }}
           onSubmit={handleSubmit}
           validationSchema={validationSchema}
         >
@@ -117,7 +117,7 @@ const  handleSubmit =({ username,email, password })=> {
             autoCorrect={false}
             icon="account"
             name="username"
-            placeholder="Name"
+            placeholder="Name                                                         "
           />
           <FormField
             autoCapitalize="none"
@@ -125,7 +125,7 @@ const  handleSubmit =({ username,email, password })=> {
             icon="email"
             keyboardType="email-address"
             name="email"
-            placeholder="Email"
+            placeholder="Email                                                          "
             textContentType="emailAddress"
           />
           <FormField
@@ -133,7 +133,7 @@ const  handleSubmit =({ username,email, password })=> {
             autoCorrect={false}
             icon="lock"
             name="password"
-            placeholder="Password"
+            placeholder="Password                                                                         "
             secureTextEntry
             textContentType="password"
           />
